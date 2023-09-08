@@ -1,0 +1,69 @@
+apiVersion: "logging.openshift.io/v1"
+kind: "ClusterLogging"
+metadata:
+  name: "instance" 
+  namespace: "openshift-logging"
+spec:
+  managementState: "Managed"  
+  logStore:
+    type: "elasticsearch"  
+    retentionPolicy: 
+      application:
+        maxAge: 1d
+      infra:
+        maxAge: 7d
+      audit:
+        maxAge: 7d
+    elasticsearch:
+      nodeCount: 3 
+      tolerations:
+      - key: "logging"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 6000
+      storage:
+        storageClassName: "local-storage" 
+        size: 200G
+      resources: 
+          limits:
+            memory: "16Gi"
+          requests:
+            memory: "16Gi"
+      proxy: 
+        resources:
+          limits:
+            memory: 256Mi
+          requests:
+            memory: 256Mi
+      redundancyPolicy: "SingleRedundancy"
+  visualization:
+    type: "kibana"  
+    kibana:
+      tolerations:
+      - key: "logging"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 6000
+      resources:
+        limits:
+          memory: 2Gi
+        requests:
+          cpu: 100m
+          memory: 1Gi
+      replicas: 1
+  collection:
+    logs:
+      type: "fluentd"  
+      fluentd:
+        tolerations:
+        - key: "logging"
+          operator: "Exists"
+          effect: "NoExecute"
+          tolerationSeconds: 6000
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            cpu: 100m
+            memory: 1Gi
+
