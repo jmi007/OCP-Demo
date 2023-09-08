@@ -1,0 +1,107 @@
+Name:               infra01.poc.demolab.local
+Roles:              infra
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    cluster.ocs.openshift.io/openshift-storage=
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=infra01.poc.demolab.local
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/infra=
+                    node.openshift.io/os_id=rhcos
+Annotations:        csi.volume.kubernetes.io/nodeid:
+                      {"openshift-storage.cephfs.csi.ceph.com":"infra01.poc.demolab.local","openshift-storage.rbd.csi.ceph.com":"infra01.poc.demolab.local"}
+                    k8s.ovn.org/host-addresses: ["192.168.68.214"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","interface-id":"br-ex_infra01.poc.demolab.local","mac-address":"00:50:56:bd:ab:12","ip-addresses":["192.168.68...
+                    k8s.ovn.org/node-chassis-id: eb1d6e4e-2f1b-47ea-9821-614725fd64d1
+                    k8s.ovn.org/node-gateway-router-lrp-ifaddr: {"ipv4":"100.64.0.10/16"}
+                    k8s.ovn.org/node-mgmt-port-mac-address: 56:66:89:a9:49:72
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"192.168.68.214/24"}
+                    k8s.ovn.org/node-subnets: {"default":"10.128.4.0/23"}
+                    machine.openshift.io/machine: openshift-machine-api/ocp-poc-lsbdb-worker-0-7w8fs
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-c6dee47bb5e630e80efda8199843c619
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-c6dee47bb5e630e80efda8199843c619
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-c6dee47bb5e630e80efda8199843c619
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-c6dee47bb5e630e80efda8199843c619
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Thu, 07 Sep 2023 23:00:08 +0700
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  infra01.poc.demolab.local
+  AcquireTime:     <unset>
+  RenewTime:       Fri, 08 Sep 2023 14:45:15 +0700
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 08 Sep 2023 14:41:57 +0700   Thu, 07 Sep 2023 23:00:08 +0700   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 08 Sep 2023 14:41:57 +0700   Thu, 07 Sep 2023 23:00:08 +0700   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 08 Sep 2023 14:41:57 +0700   Thu, 07 Sep 2023 23:00:08 +0700   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 08 Sep 2023 14:41:57 +0700   Thu, 07 Sep 2023 23:01:39 +0700   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.68.214
+  Hostname:    infra01.poc.demolab.local
+Capacity:
+  cpu:                8
+  ephemeral-storage:  125293548Ki
+  hugepages-2Mi:      0
+  memory:             16375780Ki
+  pods:               250
+Allocatable:
+  cpu:                7500m
+  ephemeral-storage:  114396791822
+  hugepages-2Mi:      0
+  memory:             15224804Ki
+  pods:               250
+System Info:
+  Machine ID:                             0d18a673c5724a94bafcdb80af5e35f1
+  System UUID:                            7dfe3d42-d6fa-895b-73a9-62b6e5f74e4a
+  Boot ID:                                15c6796c-45e7-43d6-9060-d81310dfb8cc
+  Kernel Version:                         4.18.0-372.70.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 412.86.202308260032-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.25.4-4.rhaos4.12.gitb9319a2.el8
+  Kubelet Version:                        v1.25.12+26bab08
+  Kube-Proxy Version:                     v1.25.12+26bab08
+ProviderID:                               baremetalhost:///openshift-machine-api/infra01.poc.demolab.local/8359cd80-63cd-40b2-9874-ec2105c5b129
+Non-terminated Pods:                      (22 in total)
+  Namespace                               Name                                                               CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                                               ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-node-tuning-operator  tuned-dg2sr                                                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         15h
+  openshift-dns                           dns-default-s7p2v                                                  60m (0%)      0 (0%)      110Mi (0%)       0 (0%)         4m39s
+  openshift-dns                           node-resolver-25sz9                                                5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         15h
+  openshift-image-registry                node-ca-rgjqv                                                      10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         15h
+  openshift-ingress-canary                ingress-canary-nwcjx                                               10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         4m40s
+  openshift-kni-infra                     coredns-infra01.poc.demolab.local                                  200m (2%)     0 (0%)      400Mi (2%)       0 (0%)         15h
+  openshift-kni-infra                     keepalived-infra01.poc.demolab.local                               200m (2%)     0 (0%)      400Mi (2%)       0 (0%)         15h
+  openshift-local-storage                 diskmaker-discovery-b7blt                                          20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         4m40s
+  openshift-local-storage                 diskmaker-manager-qmww9                                            20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         4m39s
+  openshift-machine-config-operator       machine-config-daemon-z2q9q                                        40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         15h
+  openshift-monitoring                    node-exporter-n8cmr                                                9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         15h
+  openshift-multus                        multus-additional-cni-plugins-dnsq9                                10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         15h
+  openshift-multus                        multus-w4lnw                                                       10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         15h
+  openshift-multus                        network-metrics-daemon-bwvzh                                       20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         15h
+  openshift-network-diagnostics           network-check-target-d4x9s                                         10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         15h
+  openshift-ovn-kubernetes                ovnkube-node-54txm                                                 50m (0%)      0 (0%)      660Mi (4%)       0 (0%)         15h
+  openshift-storage                       csi-cephfsplugin-wfx4m                                             0 (0%)        0 (0%)      0 (0%)           0 (0%)         4m40s
+  openshift-storage                       csi-rbdplugin-bv58j                                                0 (0%)        0 (0%)      0 (0%)           0 (0%)         4m40s
+  openshift-storage                       rook-ceph-crashcollector-infra01.poc.demolab.local-7c5456457hp7    0 (0%)        0 (0%)      0 (0%)           0 (0%)         4m40s
+  openshift-storage                       rook-ceph-mgr-a-66f48c89c7-52cph                                   1 (13%)       1 (13%)     3Gi (20%)        3Gi (20%)      52m
+  openshift-storage                       rook-ceph-mon-c-5476c46784-p4vgx                                   1 (13%)       1 (13%)     2Gi (13%)        2Gi (13%)      52m
+  openshift-storage                       rook-ceph-osd-2-75fc6d445f-nq9sk                                   1 (13%)       2 (26%)     5Gi (34%)        5Gi (34%)      52m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests       Limits
+  --------           --------       ------
+  cpu                3684m (49%)    4 (53%)
+  memory             12408Mi (83%)  10Gi (68%)
+  ephemeral-storage  0 (0%)         0 (0%)
+  hugepages-2Mi      0 (0%)         0 (0%)
+Events:
+  Type    Reason          Age   From             Message
+  ----    ------          ----  ----             -------
+  Normal  RegisteredNode  93m   node-controller  Node infra01.poc.demolab.local event: Registered Node infra01.poc.demolab.local in Controller
